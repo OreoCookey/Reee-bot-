@@ -1,0 +1,7 @@
+Reeeeee you need help?
+
+```ping - get your ping
+cdp + new prefix - change the prefix
+setre + channel name - set channel for re 
+report or r  + your bug report - will send your bug report to me
+```

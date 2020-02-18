@@ -253,7 +253,7 @@ async def on_message(message):
 
             if count_e > 499:
                 reply = "r" +  str("E"*1999)
-                reply = "e" +  str("E"*2000)
+                reply = "E" +  str("E"*1999)
                 logg("re is over char limit")
 
             else:
@@ -296,4 +296,4 @@ async def on_message(message):
     
 
 #running the client
-client.run('Njc4NzMwNjE5Nzk4NDIxNTA0.XkptEg.AZGziX4NhI6P8EcxmpYuEMjc0iU')
+client.run('')

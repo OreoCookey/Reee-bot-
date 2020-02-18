@@ -231,6 +231,7 @@ async def on_message(message):
     msg = str(message.content).lower()
     count_e = 0
     count_r = 0
+    over_char_limit = False
 
     
        
@@ -249,12 +250,14 @@ async def on_message(message):
         if isree(message):
 
 
-        
+       
 
             if count_e > 499:
                 reply = "r" +  str("E"*1999)
-                reply = "E" +  str("E"*1999)
+                reply2 = "E" +  str("E"*1999)
                 logg("re is over char limit")
+                over_char_limit = True
+                
 
             else:
                 
@@ -279,6 +282,10 @@ async def on_message(message):
             logg("Multiplied by 4 '" + str(message.content) + "' in '" + str(message.guild) + "' from '" + str(message.author.name) + "'")
             await message.channel.send("I can do better") 
             await message.channel.send(reply)
+            
+            if over_char_limit:
+                
+                await message.channel.send(reply2)
              
             return
 

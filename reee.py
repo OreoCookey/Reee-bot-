@@ -174,6 +174,14 @@ async def cdp(ctx, pref):
 
 @client.command()
 async def setre(ctx, ch):
+
+    ch = ch.replace("#","")
+    ch = ch.replace("<","")
+    ch = ch.replace(">","")
+
+    
+    
+    
     with open('channel.json', 'r') as f:
         channel = json.load(f)
 
@@ -182,7 +190,7 @@ async def setre(ctx, ch):
     with open('channel.json', "w") as f:
         json.dump(channel, f, indent = 4)
 
-    await ctx.send("Everything is set - please re in the channel you have set to test")
+    await ctx.send("Everything is set - please re in the channel you have set")
     logg("Reeee bot was set in '" + str(ctx.guild) + "' server")
 
 @client.command(aliases = ['r'])
@@ -238,7 +246,11 @@ async def on_message(message):
     n_channel = await get_channel(message)
     
     chnl = message.channel
-    if str(chnl) == n_channel:
+    chnl = str(chnl)
+    chnl = chnl.replace("#","")
+    chnl = chnl.replace("<","")
+    chnl = chnl.replace(">","")
+    if str(chnl) == n_channel or str(message.channel.id) == n_channel:
 
         for i in msg:
             if i == "e":
